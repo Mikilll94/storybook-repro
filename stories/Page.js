@@ -1,67 +1,26 @@
 import './page.css';
-import { createHeader } from './Header';
 
 export const createPage = ({ user, onLogout, onLogin, onCreateAccount }) => {
-  const article = document.createElement('article');
-
-  const header = createHeader({ onLogin, onLogout, onCreateAccount, user });
-  article.appendChild(header);
   const section = `
-  <section>
-    <h2>Pages in Storybook</h2>
-    <p>
-      We recommend building UIs with a
-      <a
-        href="https://blog.hichroma.com/component-driven-development-ce1109d56c8e"
-        target="_blank"
-        rel="noopener noreferrer">
-        <strong>component-driven</strong>
-      </a>
-      process starting with atomic components and ending with pages.
-    </p>
-    <p>
-      Render pages with mock data. This makes it easy to build and review page states without
-      needing to navigate to them in your app. Here are some handy patterns for managing page data
-      in Storybook:
-    </p>
-    <ul>
-      <li>
-        Use a higher-level connected component. Storybook helps you compose such data from the
-        "args" of child component stories
-      </li>
-      <li>
-        Assemble data in the page component from your services. You can mock these services out
-        using Storybook.
-      </li>
-    </ul>
-    <p>
-      Get a guided tutorial on component-driven development at
-      <a href="https://storybook.js.org/tutorials/" target="_blank" rel="noopener noreferrer">
-        Storybook tutorials
-      </a>
-      . Read more in the
-      <a href="https://storybook.js.org/docs" target="_blank" rel="noopener noreferrer">docs</a>
-      .
-    </p>
-    <div class="tip-wrapper">
-      <span class="tip">Tip</span>
-      Adjust the width of the canvas with the
-      <svg width="10" height="10" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-        <g fill="none" fillRule="evenodd">
-          <path
-            d="M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0
-            01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0
-            010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z"
-            id="a"
-            fill="#999" />
-        </g>
-      </svg>
-      Viewports addon in the toolbar
-    </div>
+  <section class="repro-wrapper">
+    <div class="repro-grid">
+      <div>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ex sed ligula elementum facilisis. Pellentesque convallis, dui eu pharetra scelerisque, purus nisi varius odio, ut semper eros purus at lectus. Aenean quis vulputate lectus. Aliquam ultrices ac quam dapibus pretium. Aenean fermentum sem vitae erat volutpat varius. Ut ultrices purus erat, vitae facilisis diam tincidunt accumsan. Nullam non erat leo. Aliquam rhoncus mollis magna eu porta. Ut neque erat, laoreet et augue in, suscipit efficitur nisi. Morbi ultrices sem id dapibus accumsan. Nulla luctus purus sem. Morbi volutpat auctor diam, sit amet volutpat diam accumsan sed. Sed auctor magna quis dignissim ultrices. Cras mattis tincidunt lacus vehicula interdum. Vestibulum sed ornare felis.
+
+      Curabitur rutrum tempor lectus eget efficitur. Nunc cursus vel libero id venenatis. Nulla sem ex, posuere id elit sit amet, tincidunt tincidunt lectus. Vivamus suscipit, velit vel elementum tristique, purus arcu dapibus mauris, sit amet fringilla ipsum enim a ante. Morbi felis lacus, facilisis eget aliquet vitae, commodo ac enim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce in odio sed metus dignissim placerat vel vitae est.
+      
+      Cras eu tortor tortor. Sed dapibus et leo at ultrices. Nulla in vestibulum lacus. Fusce id lobortis purus. Quisque dolor urna, congue at elit non, feugiat vulputate quam. Proin finibus placerat odio. Sed vitae consectetur nunc. Nunc condimentum varius lacus id egestas. Suspendisse tristique porttitor lacus non scelerisque. Vestibulum dui dui, condimentum eget semper pretium, cursus at mauris. Nullam lobortis purus ac ullamcorper lacinia. Maecenas vehicula mi in orci suscipit, eget congue mi consectetur. Nulla eu pharetra ipsum. Aliquam a mi eu libero lobortis luctus eget sed arcu.
+      
+      </div>
+      <div>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ex sed ligula elementum facilisis. Pellentesque convallis, dui eu pharetra scelerisque, purus nisi varius odio, ut semper eros purus at lectus. Aenean quis vulputate lectus. Aliquam ultrices ac quam dapibus pretium. Aenean fermentum sem vitae erat volutpat varius. Ut ultrices purus erat, vitae facilisis diam tincidunt accumsan. Nullam non erat leo. Aliquam rhoncus mollis magna eu porta. Ut neque erat, laoreet et augue in, suscipit efficitur nisi. Morbi ultrices sem id dapibus accumsan. Nulla luctus purus sem. Morbi volutpat auctor diam, sit amet volutpat diam accumsan sed. Sed auctor magna quis dignissim ultrices. Cras mattis tincidunt lacus vehicula interdum. Vestibulum sed ornare felis.
+
+  Curabitur rutrum tempor lectus eget efficitur. Nunc cursus vel libero id venenatis. Nulla sem ex, posuere id elit sit amet, tincidunt tincidunt lectus. Vivamus suscipit, velit vel elementum tristique, purus arcu dapibus mauris, sit amet fringilla ipsum enim a ante. Morbi felis lacus, facilisis eget aliquet vitae, commodo ac enim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce in odio sed metus dignissim placerat vel vitae est.
+
+  Cras eu tortor tortor. Sed dapibus et leo at ultrices. Nulla in vestibulum lacus. Fusce id lobortis purus. Quisque dolor urna, congue at elit non, feugiat vulputate quam. Proin finibus placerat odio. Sed vitae consectetur nunc. Nunc condimentum varius lacus id egestas. Suspendisse tristique porttitor lacus non scelerisque. Vestibulum dui dui, condimentum eget semper pretium, cursus at mauris. Nullam lobortis purus ac ullamcorper lacinia. Maecenas vehicula mi in orci suscipit, eget congue mi consectetur. Nulla eu pharetra ipsum. Aliquam a mi eu libero lobortis luctus eget sed arcu.
+      </div>
   </section>
 `;
 
-  article.insertAdjacentHTML('beforeend', section);
-
-  return article;
+  return section;
 };
